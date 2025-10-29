@@ -148,5 +148,19 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4987813&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
 
+<script>
+  function trackDownloadHistats() {
+    // 'event' parameter: category, action, value
+    // Hier gebruiken we category = 'download', action = 'click', value = 1
+    _Hasync.push(['Histats.event', 'download', 'click', 1]);
+  }
+
+  // Alle downloadknoppen vinden en event toevoegen
+  document.querySelectorAll('.script .btn').forEach(function(btn) {
+    btn.addEventListener('click', trackDownloadHistats);
+  });
+</script>
+
+
 </body>
 </html>
