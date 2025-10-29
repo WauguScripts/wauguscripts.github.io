@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wauguscripts.github.io/sitemap.xml
