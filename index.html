@@ -3,132 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Waugu Scripts</title>
+<title>WauguVVV Scripts</title>
 <style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:#f7f9fb;color:#0b1220}
-.wrap{max-width:900px;margin:40px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 4px 18px rgba(9,30,66,.08)}
-h1{margin:0 0 8px;font-size:24px}
-.script{border:1px solid #eef3f8;padding:16px;border-radius:8px;margin-top:16px;display:flex;justify-content:space-between;align-items:center}
-.script-info{max-width:75%}
-.btn{display:inline-block;padding:8px 14px;border-radius:6px;background:#0b6cff;color:#fff;text-decoration:none;font-weight:600}
-.small{font-size:13px;color:#334155;margin:4px 0}
-.hint{background:#f1f5f9;border-left:4px solid #64748b;padding:10px;border-radius:6px;margin-top:8px;font-size:13px}
-footer{margin-top:24px;color:#475569;font-size:13px}
+html {
+  overflow-y: scroll; /* voorkomt verspringen bij openen van nieuwe tab */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  background: #f7f9fb;
+  color: #0b1220;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(9, 30, 66, 0.08);
+  transform: translateZ(0); /* voorkomt render-glitches bij klikken */
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.script {
+  border: 1px solid #eef3f8;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0; /* voorkomt dat elementen verdwijnen bij repaint */
+}
+
+.script-info {
+  max-width: 75%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #0b6cff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background: #084ec1;
+  transform: translateY(-1px);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.small {
+  font-size: 13px;
+  color: #334155;
+  margin: 4px 0;
+}
+
+.hint {
+  background: #f1f5f9;
+  border-left: 4px solid #64748b;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+footer {
+  margin-top: 24px;
+  color: #475569;
+  font-size: 13px;
+}
+
+/* Optionele automatische dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0b1220;
+    color: #e2e8f0;
+  }
+  .wrap {
+    background: #1e293b;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+  }
+  .script {
+    border-color: #334155;
+  }
+  .btn {
+    background: #2563eb;
+  }
+  .btn:hover {
+    background: #1d4ed8;
+  }
+  .small, footer {
+    color: #94a3b8;
+  }
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1>Waugu Scripts</h1>
-<p class="small">Klik op een knop om het script te downloaden. Volg de instructies bij eventuele Windows SmartScreen-waarschuwingen. 
-Alle scripts zijn getest in Windows 11 pro.</p>
-
+<p class="small">
+Klik op een knop om het script te downloaden. Volg de instructies bij eventuele Windows SmartScreen-waarschuwingen. 
+Alle scripts zijn getest in Windows 11 Pro.
+</p>
 
 <!-- Script 1 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 1 DocuSafe.exe (versie 2.5)</h2>
-<p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd 
-naar exe bestand.</p>
-	<p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je 
-	documentenmap</p>
-<p class="small">Bestandsgrootte: 1,63 GB</p>
+  <div class="script-info">
+    <h2>Script 1 DocuSafe.exe (versie 2.5)</h2>
+    <p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd naar een .exe-bestand.</p>
+    <p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je documentenmap.</p>
+    <p class="small">Bestandsgrootte: 1,63 GB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/Docusafe 2.5.zip" target="_blank">Download</a>
+  </div>
 </div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/Docusafe 2.5.zip" target="_blank">Download</a>
-
-</div>
-</div>
-
 
 <!-- Script 2 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 2 SysInfo.exe (versie 1.4)</h2>
-<p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd 
-naar exe bestand.</p>
-	<p class="small">Wat het doet: Geeft een overzicht van je Systeem (OS, CPU, 
-	GPU, Opslag enz).</p>
-<p class="small">Bestandsgrootte: 1,78 GB</p>
+  <div class="script-info">
+    <h2>Script 2 SysInfo.exe (versie 1.4)</h2>
+    <p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd naar een .exe-bestand.</p>
+    <p class="small">Wat het doet: Geeft een overzicht van je systeem (OS, CPU, GPU, opslag, enz.).</p>
+    <p class="small">Bestandsgrootte: 1,78 GB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/SysInfo 1.4.zip" target="_blank">Download</a>
+  </div>
 </div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/SysInfo 1.4.zip" target="_blank">Download</a></div>
-</div>
 
-
-
+<!-- Script 3 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 3 DelTemp.exe (versie 1.3)</h2>
-<p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd 
-naar exe bestand.</p>
-	<p class="small">Wat het doet: Ruimt de PC op door diverse overbodige 
-	achtergebleven bestanden te verwijdern. Je krijgt de keuze wat je wel en/of 
-	niet wil verwijderen.</p>
-<p class="small">Bestandsgrootte: 1.78 GB/p>
-</div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/DelTemp+ 1.3.zip" target="_blank">Download</a></div>
+  <div class="script-info">
+    <h2>Script 3 DelTemp.exe (versie 1.3)</h2>
+    <p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd naar een .exe-bestand.</p>
+    <p class="small">Wat het doet: Ruimt de pc op door overbodige tijdelijke bestanden te verwijderen. Je krijgt de keuze wat je wel en/of niet wilt verwijderen.</p>
+    <p class="small">Bestandsgrootte: 1,78 GB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/DelTemp 1.3.zip" target="_blank">Download</a>
+  </div>
 </div>
 
-
+<!-- Script 4 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 4 Safeboot (versie 1.1)</h2>
-<p class="small">Wat het is: Een simpel CMD script.</p>
-	<p class="small">Wat het doet: Start de pc op naar veilige modus (met of 
-	zonder netwerk). Gebruik hierna hetzelfde script om terug te keren naar 
-	normale modus.</p>
-<p class="small">Bestandsgrootte: 7.84 KB</p>
+  <div class="script-info">
+    <h2>Script 4 SafeBoot.cmd (versie 1.1)</h2>
+    <p class="small">Wat het is: Een simpel CMD-script.</p>
+    <p class="small">Wat het doet: Start de pc op in veilige modus (met of zonder netwerk). Gebruik hetzelfde script om terug te keren naar de normale modus.</p>
+    <p class="small">Bestandsgrootte: 7,84 KB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/SafeBoot 1.1.zip" target="_blank">Download</a>
+  </div>
 </div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/SafeBoot 1.1.zip" target="_blank">Download</a></div>
-</div>
 
-
-
+<!-- Script 5 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 5 EnterBios.cmd (versie 1.1)</h2>
-<p class="small">Wat het is: Een simpel CMD script.</p>
-	<p class="small">Wat het doet: Start de pc op naar veilige modus (met of 
-	zonder netwerk). Gebruik hierna hetzelfde script om terug te keren naar 
-	normale modus.</p>
-<p class="small">Bestandsgrootte: 3,9 KB</p>
-</div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/EnterBios 1.1.zip" target="_blank">Download</a></div>
+  <div class="script-info">
+    <h2>Script 5 EnterBios.cmd (versie 1.1)</h2>
+    <p class="small">Wat het is: Een simpel CMD-script.</p>
+    <p class="small">Wat het doet: Start de pc opnieuw op en opent het BIOS/UEFI-scherm.</p>
+    <p class="small">Bestandsgrootte: 3,9 KB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/EnterBios 1.1.zip" target="_blank">Download</a>
+  </div>
 </div>
 
-
+<!-- Script 6 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 6 DefClean.cmd versie 1.0)</h2>
-<p class="small">Wat het is: Een simpel CMD script.</p>
-	<p class="small">Wat het doet: Start de pc op naar veilige modus (met of 
-	zonder netwerk). Gebruik hierna hetzelfde script om terug te keren naar 
-	normale modus.</p>
-<p class="small">Bestandsgrootte: 3,9 KB</p>
+  <div class="script-info">
+    <h2>Script 6 DefClean.cmd (versie 1.0)</h2>
+    <p class="small">Wat het is: Een simpel CMD-script.</p>
+    <p class="small">Wat het doet: Verwijdert onnodige bestanden uit Windows Defender en systeemplatformcache.</p>
+    <p class="small">Bestandsgrootte: 3,9 KB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/DefClean 1.0.zip" target="_blank">Download</a>
+  </div>
 </div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/DefClean 1.0.zip" target="_blank">Download</a></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer>
-	<p>&nbsp;</p>
-	<p>Tip: Lees altijd eerst het bijgeleverde leesmij.txt bestand.</p>
-<p class="small">  2025 Waugu Scripts</p>
+  <p>&nbsp;</p>
+  <p>Tip: Lees altijd eerst het bijgeleverde <strong>leesmij.txt</strong>-bestand.</p>
+  <p class="small">© 2025 Waugu Scripts</p>
 </footer>
 </div>
 </body>
