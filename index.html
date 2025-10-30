@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WauguScripts – Gratis Windows Tools en CMD-scripts</title>
+  <title>WauguScriptsXX – Gratis Windows Tools en CMD-scripts</title>
 
   <!-- SEO en metadata -->
   <meta name="description" content="Waugu Scripts biedt gratis en veilige Windows-scripts zoals backup-tools, systeeminfo, opruimhulpen en handige CMD-scripts.">
@@ -40,19 +40,41 @@ De scripts worden geleverd in een ZIP-bestand. Alle scripts zijn getest in Windo
 
 <!-- Script 1 -->
 <div class="script">
-<div class="script-info">
-<h2>Script 1 DocuSafe.exe (versie 2.5)</h2>
-<p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd 
-naar exe bestand.</p>
-	<p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je 
-	documentenmap</p>
-<p class="small">Bestandsgrootte: 1.63 MB</p>
+  <div class="script-info">
+    <h2>Script 1 DocuSafe.exe (versie 2.5)</h2>
+    <p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd naar exe bestand.</p>
+    <p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je documentenmap</p>
+    <p class="small">Bestandsgrootte: 1.63 MB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/Docusafe 2.5.zip" target="_blank" id="downloadBtn">Download</a>
+    <p id="teller">Aantal kliks: laden...</p>
+  </div>
 </div>
-<div>
-<a class="btn" href="https://wauguscripts.github.io/Docusafe 2.5.zip" target="_blank">Download</a>
 
-</div>
-</div>
+<script>
+const workspace = "waugu";                // jouw workspace
+const counterSlug = "first-counter-1480"; // slug van DocuSafe
+
+// Teller ophalen bij laden
+async function laadTeller() {
+  const r = await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}`);
+  const d = await r.json();
+  document.getElementById("teller").textContent = "Aantal kliks: " + d.count;
+}
+
+// Teller verhogen bij klik
+async function klik(e) {
+  e.preventDefault(); // voorkomt dat de browser de link opent voordat de teller is verhoogd
+  const r = await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}?increment=1`, { method: 'POST' });
+  const d = await r.json();
+  document.getElementById("teller").textContent = "Aantal kliks: " + d.count;
+  window.open("https://wauguscripts.github.io/Docusafe 2.5.zip", "_blank"); // download starten
+}
+
+document.getElementById("downloadBtn").addEventListener("click", klik);
+window.onload = laadTeller;
+</script>
 
 
 <!-- Script 2 -->
