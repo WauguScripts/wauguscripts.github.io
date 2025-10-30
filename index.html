@@ -3,25 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Waugu Scripts XX – Gratis Windows Tools en CMD-scripts</title>
+<title>Waugu Scripts ZZ  – Downloaden</title>
 <style>
-body {font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin: 0; background: #f7f9fb; color: #0b1220;}
-.wrap {max-width: 900px; margin: 40px auto; padding: 24px; background: #fff; border-radius: 8px; box-shadow: 0 4px 18px rgba(9,30,66,.08);}
-h1 {margin: 0 0 8px; font-size: 24px;}
-.script {border: 1px solid #eef3f8; padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center;}
-.script-info {max-width: 75%;}
-.btn {display: inline-block; padding: 8px 14px; border-radius: 6px; background: #0b6cff; color: #fff; text-decoration: none; font-weight: 600;}
-.small {font-size: 13px; color: #334155; margin: 4px 0;}
-footer {margin-top: 24px; color: #475569; font-size: 13px;}
+body {font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin:0; background:#f7f9fb; color:#0b1220;}
+.wrap {max-width:900px;margin:40px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 4px 18px rgba(9,30,66,.08);}
+h1 {margin:0 0 8px;font-size:24px;}
+.script {border:1px solid #eef3f8;padding:16px;border-radius:8px;margin-top:16px;display:flex;justify-content:space-between;align-items:center;}
+.script-info {max-width:75%;}
+.btn {display:inline-block;padding:8px 14px;border-radius:6px;background:#0b6cff;color:#fff;text-decoration:none;font-weight:600;}
+.small {font-size:13px;color:#334155;margin:4px 0;}
+footer {margin-top:24px;color:#475569;font-size:13px;}
 </style>
 
 <script>
+const GITHUB_USER = "waugu";
+const REPO = "wauguscripts";
+const TOKEN = "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"; // <-- Plaats je token hier
+
 function triggerDownload(scriptName) {
-  // Dit triggert de GitHub Actions workflow via repository_dispatch
-  fetch(`https://api.github.com/repos/<GEBRUIKERSNAAM>/<REPOSITORY>/dispatches`, {
+  fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO}/dispatches`, {
     method: 'POST',
     headers: {
-      'Accept': 'application/vnd.github.v3+json'
+      'Accept': 'application/vnd.github.v3+json',
+      'Authorization': 'token ' + TOKEN
     },
     body: JSON.stringify({
       event_type: 'increment_download',
@@ -34,7 +38,7 @@ function triggerDownload(scriptName) {
 <body>
 <div class="wrap">
 <h1>Waugu Scripts</h1>
-<p class="small">Klik op een knop om het script te downloaden. De scripts worden geleverd in een ZIP-bestand.</p>
+<p class="small">Klik op een knop om het script te downloaden. De downloads worden automatisch geteld.</p>
 
 <!-- Script 1 -->
 <div class="script">
