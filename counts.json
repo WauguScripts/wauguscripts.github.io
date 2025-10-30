@@ -1,3 +1,9 @@
 {
-  "DocuSafe": 0
+  "DocuSafe": 0,
+  "SysInfo": 0,
+  "DelTemp": 0,
+  "SafeBoot": 0,
+  "EnterBios": 0,
+  "DefClean": 0,
+  "WinFix": 0
 }
