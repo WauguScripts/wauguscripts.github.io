@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WauguScriptsYY – Gratis Windows Tools en CMD-scripts</title>
+  <title>ZZZWauguScripts – Gratis Windows Tools en CMD-scripts</title>
 
   <!-- SEO en metadata -->
   <meta name="description" content="Waugu Scripts biedt gratis en veilige Windows-scripts zoals backup-tools, systeeminfo, opruimhulpen en handige CMD-scripts.">
@@ -38,68 +38,38 @@
 De scripts worden geleverd in een ZIP-bestand. Alle scripts zijn getest in Windows 11 pro.</p>
 
 
+<!-- Script 1 -->
+<div class="script">
+  <div class="script-info">
+    <h2>Script 1 DocuSafe.exe (versie 2.5)</h2>
+    <p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd naar exe bestand.</p>
+    <p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je documentenmap</p>
+    <p class="small">Bestandsgrootte: 1.63 MB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/Docusafe_2.5.zip" target="_blank" id="downloadBtn">Download</a>
+  </div>
+</div>
+
 <script>
 const workspace = "waugu";                // jouw workspace
 const counterSlug = "first-counter-1480"; // exacte slug van DocuSafe
 
-// Teller ophalen bij laden
-async function laadTeller() {
-  try {
-    const tellerElem = document.getElementById("teller");
-    if (!tellerElem) return; // als er geen teller-p element is, niks doen
-    const r = await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}`);
-    const d = await r.json();
-    tellerElem.textContent = "Aantal kliks: " + d.count;
-  } catch (err) {
-    console.error("Kon teller niet laden:", err);
-  }
-}
-
 // Teller verhogen bij klik
 async function klik(e) {
-  e.preventDefault(); // voorkomt dat de link opent voordat de teller is verhoogd
+  e.preventDefault(); // voorkom dat de link opent voordat de teller is verhoogd
   try {
-    const r = await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}?increment=1`, { method: 'POST' });
-    const d = await r.json();
-    const tellerElem = document.getElementById("teller");
-    if (tellerElem) tellerElem.textContent = "Aantal kliks: " + d.count;
-    // start de download
-    window.open(e.currentTarget.href, "_blank");
+    await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}?increment=1`, { method: 'POST' });
   } catch (err) {
     console.error("Kon teller niet verhogen:", err);
   }
+  // start de download altijd, ook bij fout
+  window.open(e.currentTarget.href, "_blank");
 }
 
 // Koppel het script aan je bestaande knop
 const downloadKnop = document.getElementById("downloadBtn");
 if (downloadKnop) downloadKnop.addEventListener("click", klik);
-
-// Teller laden bij pagina load
-window.addEventListener("load", laadTeller);
-</script>
-
-<script>
-const workspace = "waugu";                // jouw workspace
-const counterSlug = "first-counter-1480"; // slug van DocuSafe
-
-// Teller ophalen bij laden
-async function laadTeller() {
-  const r = await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}`);
-  const d = await r.json();
-  document.getElementById("teller").textContent = "Aantal kliks: " + d.count;
-}
-
-// Teller verhogen bij klik
-async function klik(e) {
-  e.preventDefault(); // voorkomt dat de browser de link opent voordat de teller is verhoogd
-  const r = await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}?increment=1`, { method: 'POST' });
-  const d = await r.json();
-  document.getElementById("teller").textContent = "Aantal kliks: " + d.count;
-  window.open("https://wauguscripts.github.io/Docusafe 2.5.zip", "_blank"); // download starten
-}
-
-document.getElementById("downloadBtn").addEventListener("click", klik);
-window.onload = laadTeller;
 </script>
 
 
