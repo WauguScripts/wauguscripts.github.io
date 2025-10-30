@@ -1,0 +1,27 @@
+name: Update Counts
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  update_counts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update counts.json
+        run: |
+          echo "Increment download count"
+          FILE=counts.json
+          SCRIPT_NAME="${{ github.event.client_payload.script }}"
+          COUNT=$(jq ".\"$SCRIPT_NAME\" + 1" $FILE)
+          jq ".\"$SCRIPT_NAME\" = $COUNT" $FILE > tmp.$$.json && mv tmp.$$.json $FILE
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add $FILE
+          git commit -m "Increment $SCRIPT_NAME count"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.COUNT_JSON_TOKEN }}
