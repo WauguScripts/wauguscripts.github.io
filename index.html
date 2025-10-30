@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>RRRWauguScripts – Gratis Windows Tools en CMD-scripts</title>
+  <title>333WauguScripts – Gratis Windows Tools en CMD-scripts</title>
 
   <!-- SEO en metadata -->
   <meta name="description" content="Waugu Scripts biedt gratis en veilige Windows-scripts zoals backup-tools, systeeminfo, opruimhulpen en handige CMD-scripts.">
@@ -38,23 +38,36 @@
 De scripts worden geleverd in een ZIP-bestand. Alle scripts zijn getest in Windows 11 pro.</p>
 
 
-<script>
-const workspace = "waugu";                // jouw workspace
-const counterSlug = "first-counter-1480"; // exacte slug van DocuSafe
+<!-- Script 1 -->
+<div class="script">
+  <div class="script-info">
+    <h2>Script 1 DocuSafe.exe (versie 2.5)</h2>
+    <p class="small">Wat het is: Een script, geschreven in AHK 1.2, gecompileerd 
+    naar exe bestand.</p>
+    <p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je 
+    documentenmap</p>
+    <p class="small">Bestandsgrootte: 1.63 MB</p>
+  </div>
+  <div>
+    <a class="btn" href="https://wauguscripts.github.io/Docusafe 2.5.zip" target="_blank" id="downloadBtn">Download</a>
+  </div>
+</div>
 
-// Koppel de click-event aan de bestaande knop
+<script>
+const workspace = "waugu";                // jouw workspace (URL-safe)
+const counterSlug = "first-counter-1480"; // exacte slug
+
+// Koppel de teller aan de bestaande knop
 const downloadKnop = document.getElementById("downloadBtn");
 
 if (downloadKnop) {
   downloadKnop.addEventListener("click", async function(e) {
-    // teller verhogen via CounterAPI
     try {
       await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}?increment=1`, { method: 'POST' });
-    } catch (err) {
+    } catch(err) {
       console.error("Kon teller niet verhogen:", err);
     }
-    // download gaat gewoon normaal door
-    // geen preventDefault nodig, link opent vanzelf
+    // download start automatisch via de <a> href
   });
 }
 </script>
