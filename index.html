@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>222WauguScripts – Gratis Windows Tools en CMD-scripts</title>
+  <title>333WauguScripts – Gratis Windows Tools en CMD-scripts</title>
 
   <!-- SEO en metadata -->
   <meta name="description" content="Waugu Scripts biedt gratis en veilige Windows-scripts zoals backup-tools, systeeminfo, opruimhulpen en handige CMD-scripts.">
@@ -55,21 +55,19 @@ De scripts worden geleverd in een ZIP-bestand. Alle scripts zijn getest in Windo
 </div>
 
 <script>
-const workspace = "waugu";                // URL-safe workspace
-const counterSlug = "first-counter-1480"; // exacte slug
+const workspace = "waugu";
+const counterSlug = "first-counter-1480";
 
-// Koppel teller aan knop
 const downloadKnop = document.getElementById("downloadBtn");
 
 if (downloadKnop) {
   downloadKnop.addEventListener("click", async function() {
     try {
       await fetch(`https://api.counterapi.dev/${workspace}/${counterSlug}?increment=1`, { method: 'POST' });
-      console.log("Teller verhoogd"); // enkel voor test in console
+      console.log("Teller verhoogd");
     } catch(err) {
       console.error("Kon teller niet verhogen:", err);
     }
-    // download start automatisch via href
   });
 }
 </script>
