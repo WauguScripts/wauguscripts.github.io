@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Waugu TEST Scripts</title>
+<title>Waugu Scripts</title>
 <style>
 html {
   overflow-y: scroll; /* voorkomt verspringen bij openen van nieuwe tab */
@@ -135,10 +135,16 @@ Alle scripts zijn getest in Windows 11 Pro.
   </div>
 </div>
 
-<!-- Teller-script (onzichtbaar) -->
+<!-- Teller-script -->
 <script>
   async function registreerKlik() {
-    await fetch('https://counterapi.dev/api/up/waugu-01');
+    await fetch('https://counterapi.dev/api/v2/counter/waugu-01/increment', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ut_7iFOlUvZnX6x5UMHm6BIh9ZUkYmgiVVcjzDsSN4F',
+        'Content-Type': 'application/json'
+      }
+    });
   }
 </script>
 
