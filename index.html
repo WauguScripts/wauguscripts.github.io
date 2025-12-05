@@ -160,12 +160,20 @@ footer {
 <!-- Script 3 -->
 <div class="script">
   <div class="script-info">
-    <h2>DelTemp.exe Versie 1.5 <span class="auto-style3">(20-11-2025)</span></h2>
+    <h2>DelTemp.exe Versie 1.6 <span class="auto-style3">(05-12-2025)</span></h2>
     <p class="small">Wat het is: Een app, geschreven in AHK 1.2.</p>
     <p class="small">Wat het doet: Ruimt de pc op door overbodige tijdelijke bestanden te verwijderen. 
 	De app heeft 2 schermen: normale modus en advanced modus.</p>
     <p class="small">Bestandsgrootte: 1,78 GB</p>
-    <p class="small">Laatste wijziging: Verwijdert nu ook CBSPersistbestanden.</p>
+    <p class="small">Laatste wijziging: Reset Iconcache is aangepast.&nbsp; 
+	Voorheen werd gebruikgemaakt van de standaard runas‑aanpak om Explorer te 
+	herstarten, maar die werkte niet altijd betrouwbaar in Windows 11.<br>De 
+	nieuwe routine:<br>- sluit Explorer volledig af zodat de iconcache‑bestanden 
+	niet meer vergrendeld zijn,<br>- verwijdert alle iconcache*.db bestanden in 
+	de Explorer‑map,<br>- start Explorer daarna opnieuw zodat Windows de 
+	iconcache vers opbouwt.<br>Dankzij deze aanpak worden iconen nu consequent 
+	en volledig opnieuw opgebouwd, zonder dat er restbestanden achterblijven of 
+	dat de teller op nul blijft staan.</p>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/DelTemp/DelTemp.zip" target="_blank">Download</a>
