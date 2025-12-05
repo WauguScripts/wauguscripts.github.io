@@ -1,151 +1,113 @@
 ﻿<!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Waugu Scripts</title>
-<style>
-html {
-  overflow-y: scroll; /* voorkomt verspringen bij openen van nieuwe tab */
-  scroll-behavior: smooth;
-}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Waugu Scripts</title>
+  <style>
+    html {
+      overflow-y: scroll; /* voorkomt verspringen bij openen van nieuwe tab */
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-  margin: 0;
-  background: #f7f9fb;
-  color: #0b1220;
-  -webkit-font-smoothing: antialiased;
-}
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: #f7f9fb;
+      color: #0b1220;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.wrap {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 24px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 18px rgba(9, 30, 66, 0.08);
-  transform: translateZ(0);
-}
+    footer {
+      margin-top: 24px;
+      color: #475569;
+      font-size: 13px;
+    }
 
-h1 {
-  margin: 0 0 8px;
-  font-size: 24px;
-}
+    .wrap {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 18px rgba(9, 30, 66, 0.08);
+    }
 
-.script {
-  border: 1px solid #eef3f8;
-  padding: 16px;
-  border-radius: 8px;
-  margin-top: 16px;
-  display: block; /* flex verwijderd */
-}
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
 
-.script-info {
-  max-width: 100%;
-}
+    .script {
+      border: 1px solid #eef3f8;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      display: block;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 8px; /* knop onder de tekst */
-  padding: 8px 14px;
-  border-radius: 6px;
-  background: #0b6cff;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s ease, transform 0.1s ease;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      background: #0b6cff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
 
-.btn:hover {
-  background: #084ec1;
-  transform: translateY(-1px);
-}
+    .btn:hover {
+      background: #084ec1;
+      transform: translateY(-1px);
+    }
 
-.btn:focus {
-  outline: none;
-}
+    .btn:focus {
+      outline: none;
+    }
 
-.small {
-  font-size: 13px;
-  color: #334155;
-  margin: 4px 0;
-}
+    .small {
+      font-size: 13px;
+      color: #334155;
+      margin: 4px 0;
+    }
 
-.hint {
-  background: #f1f5f9;
-  border-left: 4px solid #64748b;
-  padding: 10px;
-  border-radius: 6px;
-  margin-top: 8px;
-  font-size: 13px;
-}
+    .hint {
+      background: #f1f5f9;
+      border-left: 4px solid #64748b;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 8px;
+      font-size: 13px;
+    }
 
-footer {
-  margin-top: 24px;
-  color: #475569;
-  font-size: 13px;
-}
+    .auto-style3 {
+      font-weight: normal;
+      font-size: small;
+    }
 
-/* Optionele automatische dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #0b1220;
-    color: #e2e8f0;
-  }
-  .wrap {
-    background: #1e293b;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.6);
-  }
-  .script {
-    border-color: #334155;
-  }
-  .btn {
-    background: #2563eb;
-  }
-  .btn:hover {
-    background: #1d4ed8;
-  }
-  .small, footer {
-    color: #94a3b8;
-  }
+    .auto-style4 {
+      color: #475569;
+      margin: 4px 0;
+    }
+  .auto-style5 {
+	color: #334155;
+	margin: 4px 0;
 }
-
-.auto-style3 {
-  font-weight: normal;
-  font-size: small;
-}
-.auto-style4 {
-  color: #475569;
-  margin: 4px 0;
-}
-.auto-style5 {
-	color: #000000;
-}
-.auto-style6 {
-	font-weight: normal;
-	font-size: small;
-	color: #000000;
-}
-.auto-style8 {
-	font-size: small;
-}
-.auto-style9 {
-	font-weight: normal;
-}
-</style>
+  </style>
 </head>
 <body>
-<div class="wrap">
-<h1>Waugu Scripts</h1>
-	<strong>Klik op een knop om het script te downloaden. Volg de instructies bij eventuele Windows SmartScreen-waarschuwingen. Alle scripts zijn getest in Windows 11 Pro en virusvrij.<!-- Script 1 --></strong><div class="script">
+  <div class="wrap">
+    <h1>Waugu Scripts</h1>
+    <p class="auto-style5"><strong>Klik op een knop om het script te downloaden. Volg de instructies bij eventuele Windows SmartScreen-waarschuwingen. Alle scripts zijn getest in Windows 11 Pro en virusvrij.</strong></p><!-- Script 1 -->
+<div class="script">
   <div class="script-info">
-      <h1>DocuSafe.exe Versie 2.6<span class="auto-style8"> </span> 
-	  <span class="auto-style9"><span class="auto-style8">(03-12-2025)</span></h1>
-	  </span>Wat het is: <br>Een app, geschreven in AHK 1.2.<br><br>Wat het doet: 
-	  <br>Maakt razendsnel een backup (kopie) van je documentenmap. 
+    <h1>DocuSafe.exe Versie 2.6 <span class="auto-style3">(03-12-2025)</span></h1>
+      Wat het is: <br>Een app, geschreven in AHK 1.2.<br><br>Wat het doet: <br>Maakt razendsnel een backup (kopie) van je documentenmap. 
 	Je kan kiezen tussen kopiëren en synchroniseren. (klik op het vraagteken om 
-	de helptekst te lezen)<br><br>Laatste wijziging: Nu de keuze tussen kopiëren en synchroniseren<br>
+	de helptekst te lezen) Bestanden die hetzelfde zijn worden overgeslagen 
+	  (snelheidswinst)<br><br>Laatste wijziging: Nu de keuze tussen kopiëren en synchroniseren<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/DocuSafe/Docusafe.zip" target="_blank">Download</a>
@@ -158,7 +120,7 @@ footer {
     <h1>SysInfo.exe Versie 1.4.2 <span class="auto-style3">(24-11-2025)</span></h1>
       Wat het is: <br>Een app, geschreven in AHK 1.2.<br><br>Wat het doet: <br>Geeft een overzicht van je systeem (OS, CPU, GPU, opslag, enz.).<br>
 	  <br>Laatste wijziging: Info geheugen geeft nu ook het type geheugen aan. 
-	  (DDR2, DDR3, DDR4, DDR5)<br>
+	  (DDR3, DDR4 enz)<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/SysInfo/SysInfo.zip" target="_blank">Download</a>
@@ -169,8 +131,7 @@ footer {
 <div class="script">
   <div class="script-info">
     <h1>DelTemp.exe Versie 1.6 <span class="auto-style3">(05-12-2025)</span></h1>
-      Wat het is: <br>Een app, geschreven in AHK 1.2.<span class="auto-style5"><br>
-	  <br>Wat het doet: <br>Ruimt de pc op door overbodige tijdelijke bestanden te verwijderen. 
+      Wat het is: <br>Een app, geschreven in AHK 1.2.<br><br>Wat het doet: <br>Ruimt de pc op door overbodige tijdelijke bestanden te verwijderen. 
 	De app heeft 2 schermen: normale modus en advanced modus.<br><br>Laatste wijziging: Reset Iconcache is aangepast.&nbsp; 
 	Voorheen werd gebruikgemaakt van de standaard runas‑aanpak om Explorer te 
 	herstarten, maar die werkte niet altijd betrouwbaar in Windows 11.<br>De 
@@ -179,7 +140,7 @@ footer {
 	de Explorer‑map,<br>- start Explorer daarna opnieuw zodat Windows de 
 	iconcache vers opbouwt.<br>Dankzij deze aanpak worden iconen nu consequent 
 	en volledig opnieuw opgebouwd, zonder dat er restbestanden achterblijven of 
-	dat de teller op nul blijft staan.<br></span>
+	dat de teller op nul blijft staan.<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/DelTemp/DelTemp.zip" target="_blank">Download</a>
@@ -189,10 +150,11 @@ footer {
 <!-- Script 4 -->
 <div class="script">
   <div class="script-info">
-      <h1>SafeBoot.cmd Versie 1.2<span class="auto-style8"> </span> <span class="auto-style3">(13-11-2025)</h1>
-	  </span>Wat het is: <br>Een eenvoudig batch bestand.<br><br>Wat het doet: 
-	  <br>Start de pc op in veilige modus (met of zonder netwerk). 
-	Gebruik om terug te keren hetzelfde script.<br><br>Laatste wijziging: Betrouwbare UAC-prompt toegevoegd.<br>
+    <h1>SafeBoot.cmd Versie 1.2 <span class="auto-style3">(13-11-2025)</span></h1>
+      Wat het is: <br>Een eenvoudig batch bestand.<br><br>Wat het doet: <br>Start de pc op in veilige modus (met of zonder netwerk). 
+	Gebruik om terug te keren hetzelfde script.<br><br>Laatste wijziging: Betrouwbare UAC-prompt toegevoegd. 
+	  Hierdoor kan het script ook in veilige modus starten met 
+	  administratorrechten.<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/SafeBoot/SafeBoot.zip" target="_blank">Download</a>
@@ -202,11 +164,10 @@ footer {
 <!-- Script 5 -->
 <div class="script">
   <div class="script-info">
-      <h1><span class="auto-style5">EnterBios.cmd Versie 1.2<span class="auto-style8">
-	  </span></span> <span class="auto-style6">(11-11-2025)</span><span class="auto-style5"></h1>
-	  Wat het is: <br>Een simpele app, geschreven in AHK 1.2.<br><br>Wat het doet: 
-	  <br>Start de pc opnieuw op en opent het BIOS/UEFI-scherm.<br><br>KBLaatste wijziging: Script start nu via een GUI.<br>
-	  </span>
+    <h1>EnterBios.cmd Versie 1.2 <span class="auto-style3">(11-11-2025)</span></h1>
+      Wat het is: <br>Een simpele app, geschreven in AHK 1.2.<br><br>Wat het doet: Start de pc opnieuw op en opent het BIOS/UEFI-scherm.<br>
+	  <br>Laatste wijziging: Batch Script opnieuw geschreven in AHK 1.1 Script start nu via een GUI. 
+	  (Grafisch scherm)<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/EnterBios/EnterBios.zip" target="_blank">Download</a>
@@ -216,9 +177,9 @@ footer {
 <!-- Script 6 -->
 <div class="script">
   <div class="script-info">
-      <h1>DefClean.cmd Versie 1.0 <span class="auto-style3">(10-11-2025)</span><span class="auto-style5"></h1>
-	  Wat het is: <br>Een simpel CMD-script.<br><br>Wat het doet: <br>Verwijdert logbestanden en quarantainemappen van Windows beveiliging. 
-	Dit script werkt alleen in veilige modus.<br></span>
+    <h1>DefClean.cmd Versie 1.0 <span class="auto-style3">(10-11-2025)</span></h1>
+      Wat het is: <br>Een simpel CMD-script.<br><br>Wat het doet: Verwijdert logbestanden en quarantainemappen van Windows beveiliging. 
+	Dit script werkt alleen in veilige modus.<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/DefClean/DefClean.zip" target="_blank">Download</a>
@@ -229,10 +190,18 @@ footer {
 <div class="script">
   <div class="script-info">
     <h1>WinFix Versie 1.1 <span class="auto-style3">(18-11-2025)</span></h1>
-      <span class="auto-style5">Wat het is:<br>Een Batch script, gecompileerd naar een .exe bestand.<br>
-	  <br>Wat het doet: <br>WinFix kan helpen om fouten te herstellen met DISM en SFC.
-	  <br>Laatste wijziging: Veiligheid toegevoegd en uitvoer in Nederlands.<br>
-	  </span>
+      Wat het is:<br>Een Batch script, gecompileerd naar een .exe bestand.<br>
+	  <br>Wat het doet: <br>WinFix kan helpen om fouten te herstellen met DISM 
+	  (Deployment Imaging Service and Management tool) en SFC (System File 
+	  Checker). <br><br>DISM&nbsp; is een hulpprogramma dat standaard aanwezig 
+	  is in Windows. Het controleert het Windows image-bestand op fouten en 
+	  repareert deze indien nodig.<br>Als bepaalde systeembestanden ontbreken, 
+	  is een internetverbinding vereist om ze opnieuw te downloaden.<br><br>SFC&nbsp; 
+	  is eveneens standaard beschikbaar in Windows. Deze tool controleert de 
+	  integriteit van systeembestanden en herstelt eventuele beschadigingen met 
+	  behulp van gegevens uit het Windows image.<br><br>Beide tools zullen 
+	  achter elkaar worden uitgevoerd. Dit kan helpen bij het opsporen en 
+	  herstellen van fouten in het Windows-systeem.<br><br>Laatste wijziging: Veiligheid toegevoegd en uitvoer in Nederlands.<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/WinFix/WinFix.zip" target="_blank">Download</a>
@@ -243,9 +212,7 @@ footer {
 <div class="script">
   <div class="script-info">
     <h1>ScreenSwitch Versie 1.0 <span class="auto-style3">(07-11-2025)</span></h1>
-      <span class="auto-style5">Wat het is: <br>Een simpele app, geschreven in AHK 1.2.<br>
-	  <br>Wat het doet: <br>Maakt het wisselen tussen twee bureaubladen makkelijker.Bestandsgrootte: 1,3MB<br>
-	  </span>
+      Wat het is: <br>Een simpele app, geschreven in AHK 1.2.<br><br>Wat het doet: Maakt het wisselen tussen twee bureaubladen makkelijker.<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/ScreenSwitch/ScreenSwitch.zip" target="_blank">Download</a>
@@ -257,7 +224,8 @@ footer {
   <div class="script-info">
     <h1>MakeGodMode 1.0 <span class="auto-style3">(03-12-2025)</span></h1>
       Wat het is:<br>Een simpele app, geschreven in AHK 1.1<br><br>
-    Wat het doet:<br>Maakt een speciale "GodMode"-map aan op je bureaublad.Bestandsgrootte: 1,3MB<br>
+    Wat het doet:<br>Maakt een speciale "GodMode"-map aan op je bureaublad. 
+	  Hiermee heb je snelle toegang tot vrijwel alle Windows instellingen.<br>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/MakeGodMode/MakeGodMode.zip" target="_blank">Download</a>
@@ -282,14 +250,10 @@ De map MyIcons is bedoeld om je eigen iconen toe te voegen.
 <br><br>De iconen in deze app kun je gebruiken om snelkoppelingen een passend icoon te geven, en ook voor scripten of applicaties die je compileert.
 
 	  <br>Als je eigen iconen hebt toegevoegd, is het verstandig om de map MyIcons veilig te stellen voordat je de app in de toekomst opnieuw installeert, zodat je persoonlijke iconen niet 
-	  <br>worden overschreven.<br>
-  <div>
-      <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/IconSearch/IconSearch.zip" target="_blank">Download</a>
-  </div>
-	  <br>
+	  <br>worden overschreven.<br><br>
+	  <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/IconSearch/IconSearch.zip" target="_blank">Download</a>
   </div>
 </div>
 
-	<p>Tip: Lees altijd eerst het bijgeleverde <strong>leesmij.txt</strong>-bestand.</p>
+<p>Tip: Lees altijd eerst het bijgeleverde <strong>leesmij.txt</strong>-bestand.</p>
 <p class="small">© 2025 Waugu Scripts</p>
-</footer>
