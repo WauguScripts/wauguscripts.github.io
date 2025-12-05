@@ -25,7 +25,7 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 18px rgba(9, 30, 66, 0.08);
-  transform: translateZ(0); /* voorkomt render-glitches bij klikken */
+  transform: translateZ(0);
 }
 
 h1 {
@@ -38,18 +38,16 @@ h1 {
   padding: 16px;
   border-radius: 8px;
   margin-top: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0; /* voorkomt dat elementen verdwijnen bij repaint */
+  display: block; /* flex verwijderd */
 }
 
 .script-info {
-  max-width: 75%;
+  max-width: 100%;
 }
 
 .btn {
   display: inline-block;
+  margin-top: 8px; /* knop onder de tekst */
   padding: 8px 14px;
   border-radius: 6px;
   background: #0b6cff;
@@ -112,43 +110,39 @@ footer {
     color: #94a3b8;
   }
 }
+
 .auto-style3 {
-	font-weight: normal;
-	font-size: small;
+  font-weight: normal;
+  font-size: small;
 }
 .auto-style4 {
-	font-size: 13px;
-	color: #475569;
-	margin: 4px 0;
-}
-.auto-style5 {
-	text-align: left;
+  font-size: 13px;
+  color: #475569;
+  margin: 4px 0;
 }
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1>Waugu Scripts</h1>
-<p class="small">
-<strong>Klik op een knop om het script te downloaden. Volg de instructies bij eventuele 
-Windows SmartScreen-waarschuwingen. Alle scripts zijn getest in Windows 11 Pro 
-en virusvrij.</strong></p>
+<p class="small"><strong>Klik op een knop om het script te downloaden. Volg de instructies bij eventuele Windows SmartScreen-waarschuwingen. Alle scripts zijn getest in Windows 11 Pro en virusvrij.</strong></p>
 
 <!-- Script 1 -->
 <div class="script">
   <div class="script-info">
-    <h2>DocuSafe.exe Versie 2.6 <span class="auto-style3">
-	(03-12-2025)</span></h2>
+    <h2>DocuSafe.exe Versie 2.6 <span class="auto-style3">(03-12-2025)</span></h2>
     <p class="small">Wat het is: Een app, geschreven in AHK 1.2.</p>
-    <p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je documentenmap.</p>
+    <p class="small">Wat het doet: Maakt razendsnel een backup (kopie) van je documentenmap. 
+	Je kan kiezen tussen kopiëren en synchroniseren. (klik op het vraagteken om 
+	de helptekst te lezen)</p>
     <p class="small">Bestandsgrootte: 2,68 GB</p>
-	  <p class="small">Laatste wijziging: Nu de keuze tussen kopiëren en 
-	  synchroniseren</p>
+    <p class="small">Laatste wijziging: Nu de keuze tussen kopiëren en synchroniseren</p>
   </div>
-  <div class="auto-style5">
+  <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/DocuSafe/Docusafe.zip" target="_blank">Download</a>
   </div>
 </div>
+
 <!-- Script 2 -->
 <div class="script">
   <div class="script-info">
@@ -156,8 +150,7 @@ en virusvrij.</strong></p>
     <p class="small">Wat het is: Een app, geschreven in AHK 1.2.</p>
     <p class="small">Wat het doet: Geeft een overzicht van je systeem (OS, CPU, GPU, opslag, enz.).</p>
     <p class="small">Bestandsgrootte: 1,78 GB</p>
-	  <p class="small">Laatste wijziging: Info geheugen geeft nu ook het type 
-	  geheugen aan. (DDR2, DDR3, DDR4, DDR5).</p>
+    <p class="small">Laatste wijziging: Info geheugen geeft nu ook het type geheugen aan.</p>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/SysInfo/SysInfo.zip" target="_blank">Download</a>
@@ -169,10 +162,10 @@ en virusvrij.</strong></p>
   <div class="script-info">
     <h2>DelTemp.exe Versie 1.5 <span class="auto-style3">(20-11-2025)</span></h2>
     <p class="small">Wat het is: Een app, geschreven in AHK 1.2.</p>
-    <p class="small">Wat het doet: Ruimt de pc op door overbodige tijdelijke bestanden te verwijderen. Je krijgt de keuze wat je wel en/of niet wilt verwijderen.</p>
-	  <p class="small">Bestandsgrootte: 1,78 GB</p>
-	  <p class="small">Laatste wijziging:&nbsp; Verwijderd nu ook 
-	  CBSPersistbestanden. (Oude gearchiveerde CBS logbestanden).</p>
+    <p class="small">Wat het doet: Ruimt de pc op door overbodige tijdelijke bestanden te verwijderen. 
+	De app heeft 2 schermen: normale modus en advanced modus.</p>
+    <p class="small">Bestandsgrootte: 1,78 GB</p>
+    <p class="small">Laatste wijziging: Verwijdert nu ook CBSPersistbestanden.</p>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/DelTemp/DelTemp.zip" target="_blank">Download</a>
@@ -183,18 +176,11 @@ en virusvrij.</strong></p>
 <div class="script">
   <div class="script-info">
     <h2>SafeBoot.cmd Versie 1.2 <span class="auto-style3">(13-11-2025)</span></h2>
-    <p class="small">Wat het is: </p>
-	  <p class="small">Een eenvoudig batch bestand.</p>
-    <p class="small">Wat het doet: Start de pc op in veilige modus (met of zonder netwerk). Gebruik hetzelfde script om terug te keren naar de normale modus.</p>
-	  <p class="small">&nbsp;</p>
-	  <p class="small">Er wordt ook een .exe bestand meegeleverd. Dit geeft de 
-	  mogelijkheid om een passend icoon toe te voegen en om het in het start. 
-	  Dit is uitsluitend om het batchbestand te starten.</p>
-	  <p class="small">Als install wordt uitgevoerd, zal het in het startmenu 
-	  worden toegevoegd met een passend icoon.</p>
-	  <p class="small">Bestandsgrootte: 1,35 MB</p>
-	  <p class="small">Laatste wijziging: Betrouwbare UAC-prompt: Dit geeft meer 
-	  zekerheid dat het script op alle systemen ook in de veilige modus werkt.</p>
+    <p class="small">Wat het is: Een eenvoudig batch bestand.</p>
+    <p class="small">Wat het doet: Start de pc op in veilige modus (met of zonder netwerk). 
+	Gebruik om terug te keren hetzelfde script.</p>
+    <p class="small">Bestandsgrootte: 1,35 MB</p>
+    <p class="small">Laatste wijziging: Betrouwbare UAC-prompt toegevoegd.</p>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/SafeBoot/SafeBoot.zip" target="_blank">Download</a>
@@ -207,9 +193,8 @@ en virusvrij.</strong></p>
     <h2>EnterBios.cmd Versie 1.2 <span class="auto-style3">(11-11-2025)</span></h2>
     <p class="small">Wat het is: Een simpele app, geschreven in AHK 1.2.</p>
     <p class="small">Wat het doet: Start de pc opnieuw op en opent het BIOS/UEFI-scherm.</p>
-	  <p class="small">Bestandsgrootte: 3,9 KB</p>
-	  <p class="small">Laatste wijziging: Script wordt nu opgestart via een Gui 
-	  (Windowsscherm)</p>
+    <p class="small">Bestandsgrootte: 3,9 KB</p>
+    <p class="small">Laatste wijziging: Script start nu via een GUI.</p>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/EnterBios/EnterBios.zip" target="_blank">Download</a>
@@ -220,11 +205,9 @@ en virusvrij.</strong></p>
 <div class="script">
   <div class="script-info">
     <h2>DefClean.cmd Versie 1.0 <span class="auto-style3">(10-11-2025)</span></h2>
-    <p class="small">Wat het is: Een simpel CMD-script. </p>
-	  <p class="small">Wat het doet: Verwijdert de logbestanden, de 
-	  beveiligingsgeschiedenis en de bestanden in de quarantainemappen van 
-	  Windows beveiliging.</p>
-	  <p class="small">Veilige modus is vereist.</p>
+    <p class="small">Wat het is: Een simpel CMD-script.</p>
+    <p class="small">Wat het doet: Verwijdert logbestanden en quarantainemappen van Windows beveiliging. 
+	Dit script werkt alleen in veilige modus.</p>
     <p class="small">Bestandsgrootte: 3,9 KB</p>
   </div>
   <div>
@@ -232,24 +215,14 @@ en virusvrij.</strong></p>
   </div>
 </div>
 
-
-
 <!-- Script 7 -->
 <div class="script">
   <div class="script-info">
     <h2>WinFix Versie 1.1 <span class="auto-style3">(18-11-2025)</span></h2>
-    <p class="small">Eeb Batch script, gecompileerd naar een .exe bestand</p>
-    <p class="small">Wat het doet: WinFix kan helpen om fouten te herstellen.<br>
-	DISM (Deployment Imaging Service and Management tool) zoekt naar fouten in 
-	het Windows image bestand en repareert deze. Hiervoor is een 
-	internetverbinding nodig als bestanden ontbreken. <br>SFC (System File 
-	Checker) controleert hierna de systeembestanden en repareert deze met behulp 
-	van de juiste gegevens uit de Windows image.<br>Let op! Dit proces kan enige 
-	tijd (tot soms langer dan 30 minuten) duren, afhankelijk van het systeem.</p>
-	  <p class="small">Bestandsgrootte: 9,75 KB</p>
-	  <p class="small">Laatste wijziging: Veiligheid toegevoegd. 
-	  (Script wordt niet uitgevoerd als het al in de achtergrond draait) en nu 
-	  duidelijke Nederlandse uitvoer.</p>
+    <p class="small">Een Batch script, gecompileerd naar een .exe bestand.</p>
+    <p class="small">Wat het doet: WinFix kan helpen om fouten te herstellen met DISM en SFC. </p>
+    <p class="small">Bestandsgrootte: 9,75 KB</p>
+    <p class="small">Laatste wijziging: Veiligheid toegevoegd en uitvoer in Nederlands.</p>
   </div>
   <div>
     <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/WinFix/WinFix.zip" target="_blank">Download</a>
@@ -261,12 +234,7 @@ en virusvrij.</strong></p>
   <div class="script-info">
     <h2>ScreenSwitch Versie 1.0 <span class="auto-style3">(07-11-2025)</span></h2>
     <p class="small">Wat het is: Een simpele app, geschreven in AHK 1.2.</p>
-    <p class="small">Wat het doet: Maakt het wisselen tussen twee bureaubladen 
-    in Windows 11 een stuk makkelijker. Het plaatst twee iconen op je bureaublad 
-    (Screen 1 en Screen 2) die je naar de taakbalk kunt vastpinnen. Zo kun je 
-    met één klik schakelen tussen je bureaubladen, zonder dat je het 
-    Taakweergave-pictogram nodig hebt of de toetscombinatie Ctrl + Win + → hoeft 
-    te gebruiken. </p>
+    <p class="small">Wat het doet: Maakt het wisselen tussen twee bureaubladen makkelijker.</p>
     <p class="small">Bestandsgrootte: 1,3MB</p>
   </div>
   <div>
@@ -278,10 +246,8 @@ en virusvrij.</strong></p>
 <div class="script">
   <div class="script-info">
     <h2>MakeGodMode 1.0 <span class="auto-style3">(03-12-2025)</span></h2>
-    <p class="auto-style4">Wat het is:<br>Een simpele app, geschreven in AHK 1.1<br>
-    <br>Wat het doet:<br>Maakt een speciale "GodMode"-map aan op je bureaublad.<br>
-    Geeft snel toegang tot alle systeeminstellingen van Windows.<br>Als de map 
-    al bestaat, krijg je een melding.</p>
+    <p class="auto-style4">Wat het is:<br>Een simpele app, geschreven in AHK 1.1<br><br>
+    Wat het doet:<br>Maakt een speciale "GodMode"-map aan op je bureaublad.</p>
     <p class="small">Bestandsgrootte: 1,3MB</p>
   </div>
   <div>
@@ -289,47 +255,29 @@ en virusvrij.</strong></p>
   </div>
 </div>
 
-
-
-
 <!-- Script 10 -->
 <div class="script">
   <div class="script-info">
     <h2>IconSearch 1.0 <span class="auto-style3">(04-12-2025)</span></h2>
-    <p class="auto-style4">IconSearch:<br><br>Wat het is:<br>Een app, geschreven 
-	in AHK 1.1, gecompileerd naar een .exe bestand.<br><br>Wat het doet:<br><br>
-	Deze app opent een map waarin diverse Windows-iconen zijn opgeslagen. 
-	Daarnaast zijn er submappen met iconen die geleverd worden bij Total 
-	Commander en een map “MyIcons” met extra iconen.<br><br>De map MyIcons is 
-	bedoeld om je eigen iconen toe te voegen.<br><br>De iconen in deze app kun 
-	je gebruiken om snelkoppelingen een passend icoon te geven, en ook voor 
-	scripten of applicaties die je compileert.<br><br>Als je eigen iconen hebt 
-	toegevoegd, is het verstandig om de map MyIcons veilig te stellen voordat je 
-	de app in de toekomst opnieuw installeert, zodat je persoonlijke iconen niet 
-	worden overschreven.</p>
-  </div>
-  <div>
-      <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/IconSearch/IconSearch.zip" target="_blank">Download</a>
+
+    <p class="auto-style4">Wat het is:</p>
+Een app, geschreven in AHK 1.1, gecompileerd naar een .exe bestand.
+
+<br><br>Wat het doet:
+
+<br>Deze app opent een map waarin diverse Windows-iconen zijn opgeslagen. Daarnaast zijn er submappen met iconen die geleverd worden bij Total Commander 
+	  <br>en een map “MyIcons” met extra iconen.
+
+De map MyIcons is bedoeld om je eigen iconen toe te voegen.
+
+<br><br>De iconen in deze app kun je gebruiken om snelkoppelingen een passend icoon te geven, en ook voor scripten of applicaties die je compileert.
+
+	  <br>Als je eigen iconen hebt toegevoegd, is het verstandig om de map MyIcons veilig te stellen voordat je de app in de toekomst opnieuw installeert, zodat je persoonlijke iconen niet 
+	  <br>worden overschreven.<br>
+	  <a class="btn" href="https://github.com/WauguScripts/wauguscripts.github.io/releases/download/IconSearch/IconSearch.zip" target="_blank">Download</a>
   </div>
 </div>
 
-
-
-
-
-	<p>Tip: Lees altijd eerst het bijgeleverde <strong>leesmij.txt</strong>-bestand.</p>
-  <p class="small">© 2025 Waugu Scripts</p>
+<p>Tip: Lees altijd eerst het bijgeleverde <strong>leesmij.txt</strong>-bestand.</p>
+<p class="small">© 2025 Waugu Scripts</p>
 </footer>
-
-
-
-
-
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
-	<p>Tip: Lees altijd eerst het bijgeleverde <strong>leesmij.txt</strong>-bestand.</p>
-  <p class="small">© 2025 Waugu Scripts</p>
-</footer>
-</div>
-</body>
-</html>
